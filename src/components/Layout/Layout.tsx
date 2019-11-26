@@ -14,7 +14,6 @@ class Layout extends Component {
 
     gridOptionsHanlder = (selectedValues: GridDataModel) => {
             this.setState(selectedValues);
-            console.log(this.state);
     };
 
     render() {

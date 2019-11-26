@@ -6,9 +6,7 @@ import Layout from './components/Layout/Layout';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Layout>
-
-      </Layout>
+      <Layout/>
     </div>
   );
 }
