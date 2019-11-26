@@ -1,0 +1,5 @@
+{
+    "instructions": "For generating the Grid please insert values for Columns and Rows.The total product must not be greater than 100. Select the size of Blocks and then press Generate",
+    "warningTotalProductSize" : "The product of Columns and Rows is greater than 100!",
+    "warningNegativeProduct" : "The product of Columns and Rows can't be negative!"
+}

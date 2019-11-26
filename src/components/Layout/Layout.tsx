@@ -7,14 +7,14 @@ import {GridDataModel} from '../../class/GridDataModel';
 
 class Layout extends Component {
     state = {
-        col: 10,
-        row: 10,
-        size: 'small'
+        col: 5,
+        row: 5,
+        size: 'Small'
     }
 
     gridOptionsHanlder = (selectedValues: GridDataModel) => {
-        console.log(selectedValues);
-            this.setState(selectedValues, () => {console.log(this.state);});
+            this.setState(selectedValues);
+            console.log(this.state);
     };
 
     render() {

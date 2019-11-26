@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import './Square.less';
 
@@ -8,13 +8,24 @@ interface Props {
     
 }
 
-const square: React.SFC<Props> = (props) => {
+class Square extends Component<Props> {
+    state = {
+        isNumberVisible: true
+    }
 
-    let attachedClasses = ["Square", "Small"]
+    showNumberHandler = () => {
+        this.setState({
+            isNumberVisible: !this.state.isNumberVisible
+          });
+    }
 
-    return(
-    <p className={attachedClasses.join(' ')} >{props.squareNumber}</p>
-    )
+    render(){
+        return(
+            <div className={"Square"+ ' ' + (this.props.size)} onClick={this.showNumberHandler}>
+                <p className={ "Number" + ' ' + (this.state.isNumberVisible ? "Show" : "Hidden")} >{this.props.squareNumber}</p>
+            </div>
+        )
+    }
 }
 
-export default square
+export default Square
