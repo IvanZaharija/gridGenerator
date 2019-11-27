@@ -1,11 +1,11 @@
 export class GridDataModel {
-    public col: number;
-    public row: number;
-    public size: string;
+    public columnValue: number;
+    public rowValue: number;
+    public sizeValue: string;
 
-    constructor(col:number, row: number, size: string){
-        this.col = col;
-        this.row = row;
-        this.size = size;
+    constructor(columnValue:number, rowValue: number, sizeValue: string){
+        this.columnValue = columnValue;
+        this.rowValue = rowValue;
+        this.sizeValue = sizeValue;
     }
 }

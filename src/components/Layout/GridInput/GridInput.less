@@ -1,5 +1,12 @@
+
+@inputComponentColor : #082c30;
+@textColor : white;
+@inputDivBackgroundColor: #c59c6d;
+@submitButtonColor:  #9de1fe;
+@warningMessageColor: #b33a3a;
+
 .GridInput {
-    background-color: #082c30;
+    background-color: @inputComponentColor;
     width: 100%;
     height: 40vh;
     display: flex;
@@ -7,7 +14,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
     border-radius: 10px;
-    color: white;
+    color: @textColor;
 
     > * {
         margin: 5vh;
@@ -38,7 +45,7 @@
         font-weight: bolder;
 
         > input, select {
-            background-color: #c59c6d;
+            background-color: @inputDivBackgroundColor;
             margin-left: 2vh;
             width: 10vh;
             border-style: none;
@@ -50,7 +57,7 @@
 }
 
 .SubmitButton {
-    background-color: #9de1fe;
+    background-color: @submitButtonColor;
     height: 5vh;
     width: 50%;
     border: solid 2px;
@@ -59,8 +66,8 @@
 }
 
 .WarningMessage {
-    color: #B33A3A;
-    font-weight: bold;
+    color: @warningMessageColor;
     height: 2vh;
+    font-weight: bold;
     text-align: center;
 }

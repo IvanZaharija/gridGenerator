@@ -7,20 +7,20 @@ import {GridDataModel} from '../../class/GridDataModel';
 
 class Layout extends Component {
     state = {
-        col: 5,
-        row: 5,
-        size: 'Small'
+        columnValue: 5,
+        rowValue: 5,
+        sizeValue: 'Small'
     }
 
-    gridOptionsHanlder = (selectedValues: GridDataModel) => {
+    gridOptionsHandler = (selectedValues: GridDataModel) => {
             this.setState(selectedValues);
     };
 
     render() {
         return (
             <div className="Layout">
-                <GridInput gridOptions={this.gridOptionsHanlder} />
-                <GridOutput columns={this.state.col} rows={this.state.row} size={this.state.size} />
+                <GridInput gridOptions={this.gridOptionsHandler} />
+                <GridOutput columns={this.state.columnValue} rows={this.state.rowValue} size={this.state.sizeValue} />
             </div>
         )
     }

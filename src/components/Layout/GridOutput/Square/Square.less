@@ -1,10 +1,19 @@
+
+@hiddenSquareColor: teal;
+@shownSquareColor: #c59c6d;
+@smallSqaureSize: 25px;
+@mediumSqaureSize: 35px;
+@largeSqaureSize: 50px;
+
+
 .Square {
-    background-color: teal;
+    background-color: @hiddenSquareColor;
     border-style: solid;
     font-weight: bolder;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .Number {
@@ -16,22 +25,22 @@
 }
 
 .Small {
-    height: 25px;
-    width: 25px;
+    height: @smallSqaureSize;
+    width: @smallSqaureSize;
 }
 
 .Medium {
-    height: 35px;
-    width: 35px;
+    height: @mediumSqaureSize;
+    width: @mediumSqaureSize;
 }
 
 .Large {
-    height: 50px;
-    width: 50px;
+    height: @largeSqaureSize;
+    width: @largeSqaureSize;
 }
 
 .Show {
-    background-color: #c59c6d;
+    background-color: @shownSquareColor;
 }
 
 .Hidden {

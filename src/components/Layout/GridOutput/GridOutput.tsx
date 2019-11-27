@@ -13,33 +13,34 @@ class Output extends Component<Props> {
 
     generateUniqueRandomNumber = (uniqueArray: number[], length: number) => {
         let randomIndex = Math.floor(Math.random() * length);
-        let num = uniqueArray[randomIndex];
-        uniqueArray.splice(randomIndex, 1)
-        return num;
+        let uniqueNumber = uniqueArray[randomIndex];
+        uniqueArray.splice(randomIndex, 1);
+        return uniqueNumber;
     }
 
     render() {
-        let length = this.props.rows * this.props.columns
-        let uniqueArray = Array.from(Array(this.props.rows * this.props.columns).keys())
+        let length = this.props.rows * this.props.columns;
+        let uniqueArray = Array.from(Array(length).keys());
 
-        let rows = [];
+        let gridRows = [];
         for (let i = 0; i < this.props.rows; i++) {
-            let column = [];
+            let gridColumn = [];
             for (let j = 0; j < this.props.columns; j++) {
-                let square = <Square
-                    key={i * 10 + j}
-                    squareNumber={this.generateUniqueRandomNumber(uniqueArray, length--)}
-                    size={this.props.size} />;
-                column.push(square);
+                gridColumn.push(
+                    <Square
+                        key={i * 10 + j}
+                        squareNumber={this.generateUniqueRandomNumber(uniqueArray, length--)}
+                        size={this.props.size} />
+                );
             }
-            rows.push(<div key={i}> {column} </div>)
+            gridRows.push(<div key={i}> {gridColumn} </div>)
         }
         return (
             <div className="GridOutput">
-                {rows}
+                {gridRows}
             </div>
         )
     }
 }
 
-export default Output
+export default Output;

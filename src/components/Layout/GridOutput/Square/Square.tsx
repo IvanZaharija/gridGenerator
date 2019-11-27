@@ -1,31 +1,28 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import './Square.less';
 
 interface Props {
     squareNumber: number;
     size: string;
-    
 }
 
 class Square extends Component<Props> {
     state = {
-        isNumberVisible: true
+        isNumberVisible: false
     }
 
-    showNumberHandler = () => {
-        this.setState({
-            isNumberVisible: !this.state.isNumberVisible
-          });
-    }
+    showNumberHandler = () => this.setState((prevState: {isNumberVisible: boolean}) => ({
+        isNumberVisible: !prevState.isNumberVisible
+    }));
 
-    render(){
-        return(
-            <div className={"Square"+ ' ' + (this.props.size)} onClick={this.showNumberHandler}>
-                <p className={ "Number" + ' ' + (this.state.isNumberVisible ? "Show" : "Hidden")} >{this.props.squareNumber}</p>
+    render() {
+        return (
+            <div className={"Square" + ' ' + (this.props.size)} onClick={this.showNumberHandler}>
+                <p className={"Number" + ' ' + (this.state.isNumberVisible ? "Show" : "Hidden")} >{this.props.squareNumber}</p>
             </div>
         )
     }
 }
 
-export default Square
+export default Square;

@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import { GridDataModel } from '../../../class/GridDataModel';
 
 import './GridInput.less';
-import Text from './TextSource.json'
+import Text from './TextSource.json';
 
 interface Props {
     gridOptions: (options: GridDataModel) => void;
 }
-
-const ROW = "row";
-const COL = "column";
-const SIZE = "size";
 const MIN = 0
 const MAX = 100
 
@@ -36,20 +32,6 @@ class GridInput extends Component<Props> {
             this.setState({ warningText: " " })
             let gridDataModel = new GridDataModel(+this.state.columnInputData, +this.state.rowInputData, this.state.sizeInputData);
             this.props.gridOptions(gridDataModel);
-            console.log(gridDataModel);
-        }
-    }
-
-    inputOnChangeHandler = (valueName: string, value: string) => {
-        switch (valueName) {
-            case COL:
-                this.setState({ columnInputData: value })
-                break;
-            case ROW:
-                this.setState({ rowInputData: value })
-                break;
-            case SIZE:
-                this.setState({ sizeInputData: value })
         }
     }
 
@@ -64,18 +46,18 @@ class GridInput extends Component<Props> {
                     <div className="DataCollecting" >
                         <label>
                             Columns:
-                            <input type="number" name="column" min={0} max={99} maxLength={2} autoComplete="off" value={this.state.columnInputData}
-                                onChange={(event) => this.inputOnChangeHandler(COL, event.target.value)} />
+                            <input type="number" name="column" min={0} max={99} autoComplete="off" value={this.state.columnInputData}
+                                onChange={(event) => this.setState({ columnInputData: event.target.value })} />
                         </label>
                         <label>
                             Rows:
-                            <input type="number" name="row" min={0} max={99} maxLength={2} autoComplete="off" value={this.state.rowInputData}
-                                onChange={(event) => this.inputOnChangeHandler(ROW, event.target.value)} />
+                            <input type="number" name="row" min={0} max={99} autoComplete="off" value={this.state.rowInputData}
+                                onChange={(event) => this.setState({ rowInputData: event.target.value })} />
                         </label>
                         <label>
                             Block size:
                             <select name="size" value={this.state.sizeInputData}
-                                onChange={(event) => this.inputOnChangeHandler(SIZE, event.target.value)}>
+                                onChange={(event) => this.setState({ sizeInputData: event.target.value})}>
                                 <option value="Small">Small</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Large">Large</option>
